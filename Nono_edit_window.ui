@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>650</y>
+      <width>300</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>뒤로가기</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Modi_btn">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>550</y>
+      <width>160</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>수정하기</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Add_btn">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>550</y>
+      <width>160</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>추가하기</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Del_btn">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>550</y>
+      <width>160</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>삭제하기</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>30</y>
+      <width>500</width>
+      <height>450</height>
+     </rect>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>130</number>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Size</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>EditToMain()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>231</x>
+     <y>674</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>116</x>
+     <y>708</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Add_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>EditToMapEdit_add()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>596</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>461</x>
+     <y>646</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Modi_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>EditToMapEdit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>485</x>
+     <y>668</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Del_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>MapDelete()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>471</x>
+     <y>599</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>506</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget</sender>
+   <signal>cellClicked(int,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selected_item_num()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>417</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>272</x>
+     <y>522</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>EditToMain()</slot>
+  <slot>EditToMapEdit()</slot>
+  <slot>MapDelete()</slot>
+  <slot>selected_item_num()</slot>
+  <slot>EditToMapEdit_add()</slot>
+ </slots>
+</ui>
